@@ -1,11 +1,16 @@
+
 ##Программа для создания AIML чат ботов##
+
 #Интерфейс программы#
+
 Интерфейс состоит из двух главных вкладок:
 * Вкладка редактора кода и отладки бота;
 * Вкладка состояния бота.
 
 ##IDE for creating AIML chat bots##
+
 #User interface#
+
 User interface consists of two tabs:
 * Code editor and debug tab;
 * Bot state tab.
