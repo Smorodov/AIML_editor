@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0">
+<meta name="author" content="Andrey"/> <meta name="language" content="Russian"/>
+    <category>
+        <pattern>
+            * это *.
+        </pattern>
+        <template>
+            Когда <star index = "1"/> это не <star index = "2"/> ?
+        </template>
+    </category>
+    <category>
+        <pattern>
+            Меня зовут *
+        </pattern>
+        <template>
+            Привет <set name = "username"> <star/></set>!
+        </template>
+    </category>
+    <category>
+        <pattern>
+            Пока
+        </pattern>
+        <template>
+            Пока <get name = "username"/>
+        </template>
+    </category>
+    <category>
+        <pattern>
+            запусти *
+        </pattern>
+        <template>
+            <system> python <star/>.py </system>
+        </template>
+    </category>
+    <category>
+        <category>
+            <pattern>
+                  Привет
+            </pattern>
+            <template>
+                  Привет чувак!
+            </template>
+        </category>
+        <pattern>
+            *
+        </pattern>
+        <template>
+            У меня нет на это ответа...
+        </template>
+    </category>
+</aiml>

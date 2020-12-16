@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://callmom.pandorabots.com/static/reference/ -->
+<html ml-update="aware" ml-stage="complete" ml-view="top" style="--ml-zoom:1 !important; color: rgb(209, 203, 199) !important;" ml-platform="desktop" ml-invert="" ml-scrollbar-style="ml-simple" ml-mode="complex" ml-stage-mode="complete-complex" ml-is-active=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>AIML 2.0 Reference</title>
+  <style>
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+    pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small,
+    strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label,
+    legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside,
+    canvas, details, figcaption, figure, footer, header, hgroup, menu, nav,
+    section, summary, time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup,
+    menu, nav, section {
+        display: block;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    blockquote, q {
+        quotes: none;
+    }
+
+    blockquote:before, blockquote:after, q:before, q:after {
+        content: '';
+        content: none;
+    }
+
+    a {
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+
+    ins {
+        background-color: #ff9;
+        color: #000;
+        text-decoration: none;
+    }
+
+    mark {
+        background-color: #ff9;
+        color: #000;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    del {
+        text-decoration: line-through;
+    }
+
+    abbr[title], dfn[title] {
+        border-bottom: 1px dotted;
+        cursor: help;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #cccccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    input, select {
+        vertical-align: middle;
+    }
+
+    .pln {
+        color: #000000;
+    }
+
+    @media screen {
+        .str {
+            color: #008800;
+        }
+
+        .kwd {
+            color: #000088;
+        }
+
+        .com {
+            color: #880000;
+        }
+
+        .typ {
+            color: #660066;
+        }
+
+        .lit {
+            color: #006666;
+        }
+
+        .pun, .opn, .clo {
+            color: #666600;
+        }
+
+        .tag {
+            color: #000088;
+        }
+
+        .atn {
+            color: #660066;
+        }
+
+        .atv {
+            color: #008800;
+        }
+
+        .dec, .var {
+            color: #660066;
+        }
+
+        .fun {
+            color: #ff0000;
+        }
+    }
+
+    @media print, projection {
+        .str {
+            color: #006600;
+        }
+
+        .kwd {
+            color: #006;
+            font-weight: bold;
+        }
+
+        .com {
+            color: #600;
+            font-style: italic;
+        }
+
+        .typ {
+            color: #404;
+            font-weight: bold;
+        }
+
+        .lit {
+            color: #004444;
+        }
+
+        .pun, .opn, .clo {
+            color: #444400;
+        }
+
+        .tag {
+            color: #006;
+            font-weight: bold;
+        }
+
+        .atn {
+            color: #440044;
+        }
+
+        .atv {
+            color: #006600;
+        }
+    }
+
+    pre.prettyprint {
+        padding: 2px;
+        border: 1px solid #888888;
+    }
+
+    body {
+        color: #000;
+        font-family: Helvetica Neue, Helvetica, Arial;
+        font-size: 14px;
+        line-height: 22px;
+        background: #fff;
+    }
+
+    #container {
+        margin: 0px 0px 0px 230px;
+        padding: 30px 50px;
+        position: relative;
+    }
+
+    #sidebar {
+        box-shadow: inset 0 0px 20px #bfdcf5;
+        -moz-box-shadow: inset 0 0px 20px #bfdcf5;
+        -webkit-box-shadow: inset 0 0px 20px #bfdcf5;
+        border-right: 1px solid #a8cff2;
+        background: #ebf4fc;
+        font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, sans-serif !important;
+        bottom: 0;
+        left: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        padding: 15px 0 30px 30px;
+        position: fixed;
+        top: 0;
+        -webkit-overflow-scrolling: touch;
+        width: 200px;
+    }
+
+    a, a:visited {
+      color: #0081eb;
+    }
+
+    a:hover {
+        color: #1f9aff;
+    }
+
+    h1 a, h2 a, h3 a, h4 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover {
+      text-decoration: none;
+      color: #000;
+    }
+
+    h1 code, h2 code, h3 code, h4 code {
+      font-weight: normal;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+
+    span.ac {
+      visibility: hidden;
+      cursor: pointer;
+      padding-left: 10px;
+      color: #ccc;
+    }
+
+    h2:hover span.ac, h3:hover span.ac {
+      visibility: visible;
+    }
+
+    #sidebar h1, #sidebar h2, #sidebar h3 {
+        text-decoration: underline;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+    }
+
+    #sidebar h1:hover, #sidebar h2:hover, #sidebar h3:hover {
+        color: #0081eb;
+    }
+
+    #sidebar h1 {
+        font-size: 16px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    #sidebar h2 {
+        font-size: 14px;
+        line-height: 30px;
+        padding-top: 10px;
+    }
+
+    #sidebar h3 {
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 0;
+        line-height: 17px;
+    }
+
+    div.container:focus {
+        outline: none;
+    }
+
+    * {
+        outline: none;
+    }
+
+    #doc p, #doc blockquote, #doc h1, #doc h2, #doc h3, #doc h4, #doc h5, #doc h6,
+    #doc table, #doc pre, #doc code, #doc ul, #doc ol, #doc img {
+        margin: 5px 0;
+    }
+
+    #doc hr {
+        border-color: #bfdcf5;
+    }
+
+    #doc ul, #doc ol {
+        padding-left: 30px;
+    }
+
+    #doc h1 {
+        font-size: 28px;
+        margin: 10px 0 20px 0;
+    }
+
+    #doc h2 {
+        font-size: 23px;
+        margin: 40px 0 5px 0;
+    }
+
+    #doc h3 {
+        font-size: 18px;
+        margin: 20px 0 4px 0;
+    }
+
+    #doc table {
+        border-collapse: collapse;
+        width: 100%;
+        padding: 10px;
+        margin: 4px 0 10px 0;
+        padding: 0;
+    }
+
+    #doc thead {
+        background: transparent;
+        border-bottom: 3px solid #bfdcf5;
+    }
+
+    #doc table tbody {
+        background: #ebf4fc;
+    }
+
+    #doc table td {
+        border: 1px solid #bfdcf5;
+    }
+
+    #doc tr, #doc td {
+        margin: 0;
+        padding: 0;
+    }
+
+    #doc td, #doc th {
+        padding: 4px 8px;
+    }
+
+    #doc td * {
+        margin: 0;
+        background: #ebf4fc;
+    }
+
+    #doc table .rule {
+        background: #ccc;
+        height: 1px;
+        margin: 5px 0;
+    }
+
+    #doc ul {
+        list-style-type: circle;
+    }
+
+    #doc code, #doc pre, #doc tt {
+        font-family: Monaco, Consolas, "Lucida Console", monospace;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 18px;
+    }
+
+    #doc pre, #doc pre, #doc blockquote {
+        border: 0;
+        background: #ebf4fc;
+        border-left: 3px solid #bfdcf5;
+        font-size: 12px;
+        padding: 6px 12px;
+        margin: 10px 0;
+    }
+
+    #doc blockquote {
+        padding: 4px 15px;
+        font-size: 13px;
+    }
+
+    #doc ol.linenums {
+        color: #999;
+        font-size: 10px;
+        padding-left: 30px;
+    }
+
+    #doc button, #doc a.button, #doc a.button:visited {
+        -webkit-user-select: none;
+        background: #fff;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 32, 0.01)), to(rgba(0, 0, 32, 0.08)));
+        background-image: -moz-linear-gradient(rgba(0, 0, 32, 0.01), rgba(0, 0, 32, 0.08));
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        color: #202028;
+        padding: 4px 10px;
+        border: 1px solid #a8a8af;
+        text-decoration: none !important;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+        line-height: 19px;
+        font-family: helvetica, arial, sans-serif;
+        display: inline-block;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    #doc button:hover, #doc a.button:hover {
+        color: #202028;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 32, 0.01)), to(rgba(0, 0, 32, 0.16)));
+        background-image: -moz-linear-gradient(rgba(0, 0, 32, 0.01), rgba(0, 0, 32, 0.16));
+        border-color: #707078;
+    }
+
+    #doc button:active, #doc a.button:active {
+        background-color: rgba(0, 0, 32, 0.05);
+        background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 32, 0.16)), to(rgba(0, 0, 32, 0.01)));
+        background-image: -moz-linear-gradient(rgba(0, 0, 32, 0.16), rgba(0, 0, 32, 0.01));
+        box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    @media print {
+        #sidebar {
+            display: none;
+        }
+
+        #container {
+            margin: 0;
+        }
+
+        body {
+            background: #fff;
+        }
+    }
+
+    @media only screen and (max-width:640px) {
+        img {
+            max-width: 100%;
+        }
+
+        #sidebar {
+            -webkit-overflow-scrolling: initial;
+            position: fixed;
+            top: 0;
+            right: 100px;
+            left: 0;
+            bottom: 0;
+            display: none;
+            z-index: 99;
+            height: auto;
+            width: auto;
+            box-shadow: 0 0px 20px #3a92e1;
+            -moz-box-shadow: 0 0px 20px #3a92e1;
+            -webkit-box-shadow: 0 0px 20px #3a92e1;
+        }
+
+        #container, #editor {
+            margin: 0;
+            padding: 10px 20px;
+        }
+
+        pre {
+            overflow: scroll;
+        }
+    }
+
+  </style>
+<style id="midnight-lizard-dynamic-values">:root { 
+--ml-main-background-color:rgb(34, 36, 37);
+--ml-main-background-color-filtered:rgb(34, 36, 37);
+--ml-main-alt-background-color:rgb(24, 26, 27);
+--ml-main-alt-background-color-filtered:rgb(24, 26, 27);
+--ml-main-trans-background-color:rgba(34, 36, 37, 0.5);
+--ml-main-trans-alt-background-color:rgba(24, 26, 27, 0.3);
+--ml-main-text-color:rgb(209, 203, 199);
+--ml-main-trans-text-color:rgba(232, 229, 227, 0.6);
+--ml-main-text-color-filtered:rgb(209, 203, 199);
+--ml-main-border-color:rgb(123, 107, 101);
+--ml-main-trans-border-color:rgba(140, 122, 115, 0.3);
+--ml-main-range-fill-color:rgb(87, 74, 69);
+--ml-main-selection-color:rgb(12, 128, 223);
+--ml-main-selection-text-color:rgb(255, 255, 255);
+--ml-main-selection-shadow-color:rgba(0, 0, 0, 0.8);
+--ml-main-button-background-color:rgb(23, 27, 28);
+--ml-main-button-border-color:rgb(112, 97, 92);
+--ml-main-red-button-background-color:rgb(46, 5, 5);
+--ml-main-scrollbar-thumb-hover-color:rgb(107, 100, 97);
+--ml-main-scrollbar-thumb-normal-color:rgb(86, 80, 78);
+--ml-main-scrollbar-thumb-active-color:rgb(75, 70, 68);
+--ml-main-scrollbar-track-color:rgb(34, 36, 37);
+--ml-main-scrollbar-marks-color:rgb(209, 203, 199);
+--ml-main-scrollbar-shadow-color:rgba(0, 0, 0, 0.3);
+--ml-main-scrollbar-size:10px;
+--ml-main-moz-scrollbar-width:auto;
+--ml-main-moz-scrollbar-track-color:rgb(24, 26, 27);
+--ml-main-link-color:rgb(117, 182, 234);
+--ml-main-link-color-hover:rgb(144, 196, 238);
+--ml-main-link-color-active:rgb(113, 179, 234);
+--ml-main-visited-color:rgb(160, 117, 234);
+--ml-main-visited-color-hover:rgb(179, 144, 238);
+--ml-main-visited-color-active:rgb(157, 113, 234);
+--ml-main-scrollbar-marks-color-original:rgb(209, 203, 199);
+--ml-main-scrollbar-thumb-hover-color-original:rgb(107, 100, 97);
+--ml-main-scrollbar-thumb-normal-color-original:rgb(86, 80, 78);
+--ml-main-scrollbar-thumb-active-color-original:rgb(75, 70, 68);
+--ml-main-scrollbar-track-color-original:rgb(34, 36, 37);
+--ml-main-moz-scrollbar-track-color-original:rgb(24, 26, 27);
+--ml-main-scrollbar-shadow-color-original:rgba(0, 0, 0, 0.3);
+--ml-main-scrollbar-marks-color-filtered:rgb(209, 203, 199);
+--ml-main-scrollbar-thumb-hover-color-filtered:rgb(107, 100, 97);
+--ml-main-scrollbar-thumb-normal-color-filtered:rgb(86, 80, 78);
+--ml-main-scrollbar-thumb-active-color-filtered:rgb(75, 70, 68);
+--ml-main-scrollbar-track-color-filtered:rgb(34, 36, 37);
+--ml-main-moz-scrollbar-track-color-filtered:rgb(24, 26, 27);
+--ml-main-scrollbar-shadow-color-filtered:rgba(0, 0, 0, 0.3);
+--ml-background-saturation-limit:0.7;
+--ml-background-contrast:0.5;
+--ml-background-lightness-limit:0.14;
+--ml-background-gray-saturation:0.05;
+--ml-background-gray-hue:200;
+--ml-background-replace-all-hues:false;
+--ml-background-hue-gravity:0;
+--ml-highlighted-background-saturation-limit:0.91;
+--ml-highlighted-background-contrast:0.06;
+--ml-highlighted-background-lightness-limit:0.4;
+--ml-highlighted-background-gray-saturation:0.05;
+--ml-highlighted-background-gray-hue:200;
+--ml-highlighted-background-replace-all-hues:false;
+--ml-highlighted-background-hue-gravity:0;
+--ml-button-background-saturation-limit:0.8;
+--ml-button-background-contrast:0.04;
+--ml-button-background-lightness-limit:0.17;
+--ml-button-background-gray-saturation:0.1;
+--ml-button-background-gray-hue:190;
+--ml-button-background-replace-all-hues:false;
+--ml-button-background-hue-gravity:0;
+--ml-text-selection-saturation-limit:0.9;
+--ml-text-selection-contrast:0;
+--ml-text-selection-lightness-limit:0.46;
+--ml-text-selection-gray-saturation:0.9;
+--ml-text-selection-gray-hue:207;
+--ml-text-selection-replace-all-hues:true;
+--ml-text-selection-hue-gravity:0;
+--ml-text-saturation-limit:0.9;
+--ml-text-contrast:0.66;
+--ml-text-lightness-limit:0.9;
+--ml-text-gray-saturation:0.1;
+--ml-text-gray-hue:22;
+--ml-text-replace-all-hues:false;
+--ml-text-hue-gravity:0;
+--ml-highlighted-text-saturation-limit:1;
+--ml-highlighted-text-contrast:0.79;
+--ml-highlighted-text-lightness-limit:1;
+--ml-highlighted-text-gray-saturation:0.1;
+--ml-highlighted-text-gray-hue:22;
+--ml-highlighted-text-replace-all-hues:false;
+--ml-highlighted-text-hue-gravity:0;
+--ml-link-saturation-limit:0.8;
+--ml-link-contrast:0.55;
+--ml-link-lightness-limit:0.75;
+--ml-link-gray-saturation:0.74;
+--ml-link-gray-hue:207;
+--ml-link-replace-all-hues:false;
+--ml-link-hue-gravity:0.8;
+--ml-link-active-saturation-limit:0.8;
+--ml-link-active-contrast:0.55;
+--ml-link-active-lightness-limit:0.68;
+--ml-link-active-gray-saturation:0.74;
+--ml-link-active-gray-hue:207;
+--ml-link-active-replace-all-hues:false;
+--ml-link-active-hue-gravity:0.8;
+--ml-link-hover-saturation-limit:0.8;
+--ml-link-hover-contrast:0.61;
+--ml-link-hover-lightness-limit:0.83;
+--ml-link-hover-gray-saturation:0.74;
+--ml-link-hover-gray-hue:207;
+--ml-link-hover-replace-all-hues:false;
+--ml-link-hover-hue-gravity:0.8;
+--ml-visited-link-saturation-limit:0.8;
+--ml-visited-link-contrast:0.55;
+--ml-visited-link-lightness-limit:0.75;
+--ml-visited-link-gray-saturation:0.74;
+--ml-visited-link-gray-hue:262;
+--ml-visited-link-replace-all-hues:true;
+--ml-visited-link-hue-gravity:0;
+--ml-visited-link-hover-saturation-limit:0.8;
+--ml-visited-link-hover-contrast:0.61;
+--ml-visited-link-hover-lightness-limit:0.83;
+--ml-visited-link-hover-gray-saturation:0.74;
+--ml-visited-link-hover-gray-hue:262;
+--ml-visited-link-hover-replace-all-hues:true;
+--ml-visited-link-hover-hue-gravity:0;
+--ml-visited-link-active-saturation-limit:0.8;
+--ml-visited-link-active-contrast:0.55;
+--ml-visited-link-active-lightness-limit:0.68;
+--ml-visited-link-active-gray-saturation:0.74;
+--ml-visited-link-active-gray-hue:262;
+--ml-visited-link-active-replace-all-hues:true;
+--ml-visited-link-active-hue-gravity:0;
+--ml-text-shadow-saturation-limit:0.8;
+--ml-text-shadow-contrast:0.8;
+--ml-text-shadow-lightness-limit:1;
+--ml-text-shadow-gray-saturation:0.1;
+--ml-text-shadow-gray-hue:16;
+--ml-text-shadow-replace-all-hues:false;
+--ml-text-shadow-hue-gravity:0;
+--ml-border-saturation-limit:0.8;
+--ml-border-contrast:0.3;
+--ml-border-lightness-limit:0.5;
+--ml-border-gray-saturation:0.1;
+--ml-border-gray-hue:16;
+--ml-border-replace-all-hues:false;
+--ml-border-hue-gravity:0;
+--ml-button-border-saturation-limit:0.64;
+--ml-button-border-contrast:0.15;
+--ml-button-border-lightness-limit:0.4;
+--ml-button-border-gray-saturation:0.1;
+--ml-button-border-gray-hue:16;
+--ml-button-border-replace-all-hues:false;
+--ml-button-border-hue-gravity:0;
+--ml-scrollbar-hover-saturation-limit:0.05;
+--ml-scrollbar-hover-contrast:0;
+--ml-scrollbar-hover-lightness-limit:0.4;
+--ml-scrollbar-hover-gray-saturation:0.05;
+--ml-scrollbar-hover-gray-hue:16;
+--ml-scrollbar-hover-replace-all-hues:false;
+--ml-scrollbar-hover-hue-gravity:0;
+--ml-scrollbar-normal-saturation-limit:0.05;
+--ml-scrollbar-normal-contrast:0;
+--ml-scrollbar-normal-lightness-limit:0.32;
+--ml-scrollbar-normal-gray-saturation:0.05;
+--ml-scrollbar-normal-gray-hue:16;
+--ml-scrollbar-normal-replace-all-hues:false;
+--ml-scrollbar-normal-hue-gravity:0;
+--ml-scrollbar-active-saturation-limit:0.05;
+--ml-scrollbar-active-contrast:0;
+--ml-scrollbar-active-lightness-limit:0.28;
+--ml-scrollbar-active-gray-saturation:0.05;
+--ml-scrollbar-active-gray-hue:16;
+--ml-scrollbar-active-replace-all-hues:false;
+--ml-scrollbar-active-hue-gravity:0;
+--ml-image-saturation-limit:0.9;
+--ml-image-contrast:0.66;
+--ml-image-lightness-limit:0.8;
+--ml-image-gray-saturation:0.1;
+--ml-image-gray-hue:22;
+--ml-image-replace-all-hues:false;
+--ml-image-hue-gravity:0;
+--ml-svg-background-saturation-limit:0.8;
+--ml-svg-background-contrast:0.5;
+--ml-svg-background-lightness-limit:0.5;
+--ml-svg-background-gray-saturation:0.1;
+--ml-svg-background-gray-hue:190;
+--ml-svg-background-replace-all-hues:false;
+--ml-svg-background-hue-gravity:0;
+--ml-background-image-saturation-limit:0.8;
+--ml-background-image-contrast:0.5;
+--ml-background-image-lightness-limit:0.4;
+--ml-background-image-gray-saturation:0.05;
+--ml-background-image-gray-hue:200;
+--ml-background-image-replace-all-hues:false;
+--ml-background-image-hue-gravity:0;
+--ml-video-saturation-limit:1;
+--ml-video-contrast:0.5;
+--ml-video-lightness-limit:1;
+--ml-video-gray-saturation:0;
+--ml-video-gray-hue:0;
+--ml-video-replace-all-hues:false;
+--ml-video-hue-gravity:0;
+--ml-browser:Chrome!important;
+--ml-app-id:pbnndmlekkboofhnbonilimejonapojg;
+--ml-version:10.6.0;
+--ml-content-filter:'';
+--ml-blue-filter:'';
+--pdf-bg-filter:url("#pdf-bg-filter");
+--ml-invert:1!important;
+--ml-is-active:1!important;
+--ml-text-filter:saturate(0.7) brightness(0.86) hue-rotate(180deg) invert(1) brightness(0.9);
+--ml-contrast-text-filter:saturate(0.7) brightness(0.9) hue-rotate(180deg) invert(1) brightness(0.9);
+--ml-highlighted-text-filter:saturate(0.7) brightness(0.86) hue-rotate(180deg) invert(1) brightness(1);
+--ml-dynamic-content-text-filter:saturate(0.7) brightness(0.86) hue-rotate(180deg) invert(1) brightness(0.9);
+--ml-dynamic-content-contrast-text-filter:saturate(0.7) brightness(0.9) hue-rotate(180deg) invert(1) brightness(0.9);
+--ml-dynamic-content-highlighted-text-filter:saturate(0.7) brightness(0.86) hue-rotate(180deg) invert(1) brightness(1);
+--ml-image-filter:saturate(0.9) brightness(0.8);
+--ml-image-revert-filter:saturate(1.2);
+--ml-bg-image-revert-filter:saturate(1.1);
+--ml-button-revert-filter:saturate(1.1);
+--ml-text-revert-filter:saturate(1.2);
+--ml-video-revert-filter:saturate(1.3);
+--ml-bg-revert-filter:none; }</style><style id="midnight-lizard-pseudo-styles">[before-style="background-image"]:not(imp)::before{filter:saturate(0.8) brightness(0.4)!important}
+[before-style="inverted-background-image"]:not(imp)::before{filter:saturate(0.8) brightness(0.86) hue-rotate(180deg) invert(1)!important}
+[after-style="background-image"]:not(imp)::after{filter:saturate(0.8) brightness(0.4)!important}
+[after-style="inverted-background-image"]:not(imp)::after{filter:saturate(0.8) brightness(0.86) hue-rotate(180deg) invert(1)!important}</style><script id="midnight-lizard-page-script" type="text/javascript" src="chrome-extension://pbnndmlekkboofhnbonilimejonapojg/js/page-script.js"></script></head>
+<body style="background-color: rgb(34, 36, 37) !important; color: rgb(209, 203, 199) !important;">
+<div id="sidebar" style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(36, 120, 194) rgb(112, 97, 92) rgb(112, 97, 92) !important;"><h1 style=""><a href="https://callmom.pandorabots.com/static/reference/#aiml-2-0-reference" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;">AIML 2.0 Reference</a></h1><h2 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;">Elements</a></h2><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-aiml-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;aiml&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-bot-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;bot /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-br-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;br /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-category-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;category&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-condition-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;condition&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-date-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;date /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-denormalize-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;denormalize&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-eval-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;eval&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-explode-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;explode&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-first-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;first&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-formal-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;formal&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-gender-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;gender&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-get-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;get /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-id-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;id /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-img-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;img /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-input-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;input /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-interval-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;interval&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-learn-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;learn&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-learnf-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;learnf&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-li-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;li&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-loop-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;loop /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-lowercase-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;lowercase&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-map-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;map&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-normalize-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;normalize&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-oob-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;oob&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-pattern-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;pattern&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-person-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;person&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-person2-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;person2&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-program-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;program&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-random-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;random&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-request-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;request /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-response-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;response /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-rest-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;rest&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sentence-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;sentence&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-set-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;set&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-size-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;size /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sr-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;sr /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-srai-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;srai&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sraix-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;sraix &gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-star-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;star /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-template-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;template&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-that-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;that&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-thatstar-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;thatstar /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-think-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;think&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-topic-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;topic&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-topicstar-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;topicstar /&gt;</a></h3><h3 style=""><a href="https://callmom.pandorabots.com/static/reference/#elements/-lt-uppercase-gt-" style="--link-color:rgb(200, 192, 188) !important; --link-color-hover:rgb(200, 192, 188) !important; --link-color-active:rgb(200, 192, 188) !important; --visited-color:rgb(200, 192, 188) !important; --visited-color-hover:rgb(200, 192, 188) !important; --visited-color-active:rgb(200, 192, 188) !important;"> - &lt;uppercase&gt;</a></h3></div>
+<div id="container"><div id="doc"><h1><a name="aiml-2-0-reference" class="anchor" href="https://callmom.pandorabots.com/static/reference/#aiml-2-0-reference" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">AIML 2.0 Reference</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h1><p>This page documents the Pandorabots implementation of AIML 2.0. The elements on this page may be used on both the <a href="https://playground.pandorabots.com/" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">Playground</a> and the <a href="https://developer.pandorabots.com/" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">Developer Portal server</a>.</p>
+<h2><a name="elements" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">Elements</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h2><h3><a name="elements/-lt-aiml-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-aiml-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;aiml&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">AIML root element</em> delimits a block of AIML code. All other elements must be descendents of the root element.</p>
+<p><strong>Attributes</strong></p>
+<p><code>version</code> (optional)<br>Specifies the AIML version that the document is written in.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;aiml version="2.0"&gt;
+&lt;!-- AIML code goes here --&gt;
+&lt;/aiml&gt;
+</code></pre><h3><a name="elements/-lt-bot-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-bot-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;bot /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">bot element</em> is used to recall custom bot properties defined in the <code>.properties</code> file. These variables are accessible to all users of the bot.</p>
+<p><strong>Attributes</strong></p>
+<p><code>name</code> (required)<br>Specifies the name of the property being recalled. If no property exists under the specified name, the bot element will return the value of the property named <code>default-property</code>.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+  &lt;pattern&gt;WHAT IS YOUR NAME&lt;/pattern&gt;
+  &lt;template&gt;My name is &lt;bot name="name" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-br-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-br-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;br /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>Creates a line break in the response string. Identical to the HTML <code>&lt;br&gt;</code> element.</p>
+<h3><a name="elements/-lt-category-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-category-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;category&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">category element</em> delimits a base unit of knowledge in an AIML-based chatbot. In a very broad sense, a single category accepts an input, and returns an output.</p>
+<p>All AIML elements (with the exception of the AIML root element and the topic element) must be contained within a category block.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;HI&lt;/pattern&gt;
+&lt;template&gt;Hello world!&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-condition-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-condition-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;condition&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">condition element</em> is used to create an IF-THEN-ELSE type of control flow within a bot's response. This is done by checking the value of a predicate, and returning a response depending on that value.</p>
+<p><strong>Attributes</strong></p>
+<p><code>name</code> (required)<br>Specifies the name of the predicate whose value will be checked.</p>
+<p><strong>Usage</strong></p>
+<p>The condition element is used in conjunction with list elements written with <code>value</code> attributes. If the value of the predicate referenced in the condition element matches that of any list element's value, that list element will be returned.</p>
+<p>If the list element contains no value attribute, it will be returned in the case that no other list elements match the predicate's value.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;DO YOU FIND ME ATTRACTIVE&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;condition name="gender"&gt;
+    &lt;li value="male"&gt;I find you very handsome.&lt;/li&gt;
+    &lt;li value="female"&gt;I find you very pretty.&lt;/li&gt;
+    &lt;li&gt;I find you very attractive.&lt;/li&gt;
+  &lt;/condition&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><p>In this example, the bot will check the value of a predicate named <code>gender</code>. In the case that the predicate's value is either <code>"male"</code> or <code>"female"</code>, one of the first two list elements will be returned. If neither of these conditions is met, then the third list element will be returned.</p>
+<h3><a name="elements/-lt-date-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-date-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;date /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>Returns the date of the user's locale.</p>
+<p><strong>Attributes</strong></p>
+<p><code>format</code> (optional)<br>Specifies the format of the returned date. This can be written like arguments to UNIX's <code>strftime</code> function. More on this <a href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">here</a>.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT IS THE DATE&lt;/pattern&gt;
+&lt;template&gt;Today is &lt;date format="%B %d, %Y" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-denormalize-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-denormalize-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;denormalize&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">denormalize element</em> attempts to match its contents against the names of properties found in <code>denormal.substitution</code>. If a match is found, the denormalize element and its contents will be replaced by the property's value.</p>
+<p>The properties found in <code>denormal.substitution</code> are used to reverse transformations done by <code>normal.substitution</code>.</p>
+<p><strong>Usage</strong></p>
+<p>During input pre-processing, <code>normal.subsitution</code> removes punctuation. We can see this by echoing the part of the input that originally contained some puncutation:</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;SAY *&lt;/pattern&gt;
+&lt;template&gt;&lt;star /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Say pandorabots.com
+Output: pandorabots dot com
+
+--&gt;
+</code></pre><p>This punctuation can be re-inserted by using the denormalize element:</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;SAY *&lt;/pattern&gt;
+&lt;template&gt;&lt;denormalize&gt;&lt;star /&gt;&lt;/denormalize&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Say pandorabots.com
+Output: pandorabots.com
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-eval-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-eval-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;eval&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">eval element</em> is used to reference variables found in an outer category from within a nested category. This allows you to echo wildcard contents from an outer category from within a learn category.</p>
+<p>Anything found within an eval element will be evaluated first, before the new category is created.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;THE * IS BLUE&lt;/pattern&gt;
+&lt;template&gt;
+  I will remember that the &lt;star /&gt; is blue.
+  &lt;learn&gt;
+    &lt;category&gt;
+    &lt;pattern&gt;WHAT COLOR IS THE &lt;eval&gt;&lt;star /&gt;&lt;/eval&gt;&lt;/pattern&gt;
+    &lt;template&gt;The &lt;eval&gt;&lt;star /&gt;&lt;/eval&gt; is blue&lt;/template&gt;
+    &lt;/category&gt;
+  &lt;/learn&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: The sky is blue.
+Output I will remember that the sky is blue.
+
+Input: What color is the sky?
+Output: The sky is blue.
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-explode-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-explode-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;explode&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">explode element</em> is used to break a single word in to multiple words, by inserting spaces in between each character.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;EXPLODE *&lt;/pattern&gt;
+&lt;template&gt;&lt;explode&gt;&lt;star /&gt;&lt;/explode&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Explode coffee
+Output: c o f f e e
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-first-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-first-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;first&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">first element</em> returns the first word found in its contents. This is an implementation of list processing in AIML.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;FIRST *&lt;/pattern&gt;
+&lt;template&gt;&lt;first&gt;&lt;star /&gt;&lt;/first&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: First a b c d
+Output: a
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-formal-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-formal-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;formal&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">formal element</em> returns its contents with each word capitalized.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;FORMAL *&lt;/pattern&gt;
+&lt;template&gt;&lt;formal&gt;&lt;star /&gt;&lt;/formal&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Formal george washington
+Output: George Washington
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-gender-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-gender-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;gender&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">gender element</em> attempts to match its contents against the names of properties found in <code>gender.substitution</code>. If a match is found, the gender element and its contents will be replaced by the property's value.</p>
+<p>The <code>gender.substitution</code> file contains properties whose names and values contain pronouns of opposite genders.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;  
+&lt;pattern&gt;DOES IT BELONG TO *&lt;/pattern&gt;  
+&lt;template&gt;No, it belongs to &lt;gender&gt;&lt;star/&gt;&lt;/gender&gt;&lt;/template&gt;  
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Does it belong to her?
+Output: No, it belongs to him
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-get-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-get-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;get /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">get element</em> is used to return the value of a particular predicate.</p>
+<p><strong>Attributes</strong></p>
+<p><code>name</code> (required)<br>Specifies the name of the predicate to recall. If the predicate does not yet have a value, then the get element will return the default value for that predicate as specified in the <code>.pdefaults</code> file. If no default is specified, then the get element will return the value of the property <code>default-get</code>.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT IS MY NAME&lt;/pattern&gt;
+&lt;template&gt;&lt;get name="name" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;MY NAME IS *&lt;/pattern&gt;
+&lt;template&gt;Nice to meet you, &lt;set name="name"&gt;&lt;star /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: What is my name?
+Output: unknown
+
+Input: My name is Daniel.
+Output: Nice to meet you, Daniel.
+
+Input: What is my name?
+Output: Daniel.
+
+--&gt;
+</code></pre><p>As seen in the above example, the first category returns the <code>default-get</code> property value ("unknown") in the case that no custom predicate <code>name</code> has been set. Once the second category has been engaged, the get element returns the custom value of the predicate.</p>
+<p>To avoid returning the value of <code>default-get</code>, you can use a condition element to first check whether or not a predicate has been set. By using a wildcard as the list element's <code>value</code> attribute, we can check for any value of the predicate other than an empty string.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT IS MY NAME&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;condition name="name"&gt;
+    &lt;li value="*"&gt;&lt;get name="name" /&gt;&lt;/li&gt;
+    &lt;li&gt;You have not told me your name.&lt;/li&gt;
+  &lt;/condition&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-id-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-id-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;id /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">id element</em> returns the current <code>botid</code>, along with the <code>client_name</code> of whoever has issued the input. <code>botid</code> is the same as <code>app_id/botname</code>.</p>
+<h3><a name="elements/-lt-img-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-img-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;img /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">image element</em> returns an image found at a specified URL. Identical to the HTML <code>&lt;img&gt;</code> tag.</p>
+<p><strong>Attributes</strong></p>
+<p><code>src</code> (required)<br>Specifies the URL where the image can be found.</p>
+<h3><a name="elements/-lt-input-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-input-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;input /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">input element</em> returns the entire user's input. This is distinct from the star element, which returns only contents captured by a wildcard in the matched pattern.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;Stop repeating me&lt;/pattern&gt;
+&lt;template&gt;&lt;input /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Stop repeating me
+Output: Stop repeating me
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-interval-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-interval-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;interval&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">interval element</em> is used in conjunction with the date element to calculate the difference between two different times/dates.</p>
+<p><strong>Attributes</strong></p>
+<p><code>format</code><br>Specifies the format of the returned date. This can be written like arguments to UNIX's <code>strftime</code> function. More on this <a href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">here</a>.</p>
+<p><strong>Child tags</strong></p>
+<p><code>&lt;from&gt;</code><br>Specifies the date from which the interval should begin.</p>
+<p><code>&lt;to&gt;</code><br>Specifies the date at which the interval should end.</p>
+<p><code>&lt;style&gt;</code><br>Specifies the style in which the interval should be returned. Can contain <code>years</code>, <code>months</code>, <code>days</code>, or <code>seconds</code>.</p>
+<p><strong>Usage</strong></p>
+<p>To calculate the difference between the current date and the bot's birthdate, make sure to include a birthdate property in the <code>.properties</code> file, in a format that matches the format you intend to be working with.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;AGE IN YEARS&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;interval format="%B %d, %Y"&gt;
+    &lt;style&gt;years&lt;/style&gt;
+    &lt;from&gt;&lt;bot name="birthdate"/&gt;&lt;/from&gt;
+    &lt;to&gt;&lt;date format="%B %d, %Y" /&gt;&lt;/to&gt;
+  &lt;/interval&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><p>The style element specifies that the interval should be returned in years.</p>
+<h3><a name="elements/-lt-learn-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-learn-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;learn&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">learn element</em> allows the user to generate new category blocks from within a conversation. This powerful introduced in AIML 2.0 allows users to actually teach the bot new information.</p>
+<p>Categories generated by the learn element are stored in memory, and are only accessible with the <code>client_name</code> that was used to create them.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;I LIKE COFFEE&lt;/pattern&gt;
+&lt;template&gt;
+  I will remember that you like coffee.
+  &lt;learn&gt;
+    &lt;category&gt;
+    &lt;pattern&gt;WHAT DO I LIKE&lt;/pattern&gt;
+    &lt;template&gt;You like coffee.&lt;/template&gt;
+    &lt;/category&gt;
+  &lt;/learn&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: I like coffee.
+Output: I will remember that you like coffee.
+
+Input: What do I like?
+Output: You like coffee
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-learnf-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-learnf-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;learnf&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">learnf element</em> is identical to the learn element in syntax, however, the generated category is written to an <code>.aiml</code> file that you may specify with the property <code>learn-filename</code>. If the file has not yet been created, it will be created when your bot "learns" its first category.</p>
+<h3><a name="elements/-lt-li-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-li-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;li&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">list item element</em> can be a child of both <code>&lt;condition&gt;</code> and <code>&lt;random&gt;</code>. It allows you to attach mulitple responses, each of which is chosen under certain circumstances.</p>
+<p><strong>Attributes</strong></p>
+<p><code>value</code> (optional)<br>You may specify a value when the list item element is the child of a condition element. The list item element will be returned if the value matches that of the predicate referenced in the condition element.</p>
+<h3><a name="elements/-lt-loop-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-loop-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;loop /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">loop element</em> is used to iterate over a set of list item elements that are contained in a condition block.</p>
+<p><strong>Usage</strong></p>
+<p>To use the loop element, you must have a list item element with a value, and a second one that has no specified value. The loop element will be a child of the second list item, signifying that each time the second item is returned by the condition block, a loop occurs.</p>
+<p>This means that you can modify a variable (like a predicate) when the second condition is met. If the value of the new predicate matches that of the first list item, then the loop will break.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;COUNT TO &lt;set&gt;number&lt;/set&gt;&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;think&gt;&lt;set name="count"&gt;0&lt;/set&gt;&lt;/think&gt;
+  &lt;condition name="count"&gt;
+    &lt;li&gt;&lt;value&gt;&lt;star/&gt;&lt;/value&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;set name="count"&gt;
+        &lt;map&gt;&lt;name&gt;successor&lt;/name&gt;&lt;get name="count"/&gt;&lt;/map&gt;
+      &lt;/set&gt;
+      &lt;loop/&gt;
+    &lt;/li&gt;
+  &lt;/condition&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Count to 6
+Output: 1 2 3 4 5 6
+
+--&gt;
+</code></pre><p>This example takes advantage of the built in set <code>number</code>, which verifies am input word as a number, and the built in map <code>successor</code>, which maps integers to their successive integers.</p>
+<p>Before the condition block, the <code>count</code> predicate is initialized with the value <code>0</code>. If the user input was <code>Count to 0</code>, then the first list item will be returned (echoing the number found in the input).</p>
+<p>Otherwise, the second item will be returned, and the <code>count</code> predicate is reset as the successive integer to the one found in the input. The loop element will run the condition again, and will continue to return the second list item until the predicate count matches the value of <code>&lt;star /&gt;</code>.</p>
+<h3><a name="elements/-lt-lowercase-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-lowercase-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;lowercase&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">lowercase element</em> transforms all letters in its contents to lowercase.</p>
+<h3><a name="elements/-lt-map-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-map-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;map&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">map element</em> is used to reference a <code>.map</code> file, which attempts to match the map element's contents to one of its own properties, returning the property's value. Maps are data structures that provide key-value pairs.</p>
+<p><strong>Attributes</strong></p>
+<p><code>name</code> (required)<br>Specifies the name of the <code>.map</code> file to match contents against.</p>
+<p><strong>Usage</strong></p>
+<p>This example uses <a href="https://github.com/pandorabots/rosie/blob/master/lib/maps/state2capital.map" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">state2capital.map</a> and <a href="https://github.com/pandorabots/rosie/blob/master/lib/sets/state.set" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">state.set</a>, both from the Rosie chatbot repository.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT IS THE CAPITAL OF &lt;set&gt;state&lt;/set&gt;&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;map name="state2capital"&gt;&lt;star /&gt;&lt;/map&gt; is the capital of &lt;star /&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: What is the capital of California?
+Output: Sacramento is the capital of California
+
+--&gt;
+</code></pre><p>This category shows how maps and sets can be used in conjunction with each other to create "facts" in your bot's knowledge base. The <code>state.set</code> file is called in the pattern to verify that the user's input actually contained a state. If the wildcard contents does exist in the set file, it is then passed in as an input to <code>state2capital.map</code>. If it matches any of the keys in the map file, then the map element will return as associated value.</p>
+<h3><a name="elements/-lt-normalize-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-normalize-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;normalize&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><h3><a name="elements/-lt-oob-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-oob-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;oob&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">out-of-band element</em> serves as a delimiter for a portion of the bot's response that will communicate something beyond the conversation. While the out-of-band element serves no purpose to your bot internally, it can be used by the bot to "control" an application. By running the bot's response through an XML parser, you can separate the bot's text response from its out-of-band contents.</p>
+<p><strong>Usage</strong></p>
+<p>Imagine you have built a mobile application that integrates a chatbot into some of your phone's native features. One feature your application offers is the ability to place a call to someone in your contact list simply by telling the chatbot to call that person.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;CALL *&lt;/pattern&gt;
+&lt;template&gt;
+  Calling &lt;star /&gt;.
+  &lt;oob&gt;&lt;call&gt;&lt;star /&gt;&lt;/call&gt;&lt;/oob&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Call Mom.
+Output: Calling Mom. &lt;oob&gt;&lt;call&gt;Mom&lt;/call&gt;&lt;/oob&gt;
+
+--&gt;
+</code></pre><p>Notice that the out-of-band element remains intact even after it has been sent back to the client. To truly integrate out-of-band elements into an application, the application must parse the bot's response as XML to delimit its constituent parts. You can then return the contents of the out-of-band element to an event handler in your application, and the remainder to display to your user.</p>
+<h3><a name="elements/-lt-pattern-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-pattern-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;pattern&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">pattern element</em> is the block within each category that defines a linguistic pattern against which the user's input can be matched. The pattern may contain letters, numbers, spaces, and a number of other symbols including <em style="color: rgb(239, 237, 235) !important;">wildcards</em>. For more detailed information on patterns, see the section labeled Pattern-side reference.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;HI&lt;/pattern&gt;
+&lt;template&gt;Hello there.&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-person-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-person-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;person&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">person element</em> attempts to match its contents against the <code>person.substitutions</code> file, which transforms pronouns between first and second person. If the contents forms a match with the name of a property in that file, then the person element and its contents will be replaced by the property's value.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;I AM *&lt;/pattern&gt;  
+&lt;template&gt;You are &lt;person&gt;&lt;star/&gt;&lt;/person&gt;&lt;/template&gt;  
+&lt;/category&gt;
+
+&lt;!--
+
+Input: I am waiting for you
+Output: You are waiting for me
+
+--&gt;
+</code></pre><p>In the above example, the phrase "waiting for you" is echoed in the template using <code>&lt;star /&gt;</code>. But because the tag descends from the person element, the pronoun "you" is transformed to "me".</p>
+<h3><a name="elements/-lt-person2-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-person2-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;person2&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">person2 element</em> is identical to the person element, however, it is used to transform pronouns between first and third person.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;  
+&lt;pattern&gt;GIVE THE * TO *&lt;/pattern&gt;  
+&lt;template&gt;User has asked me to give the &lt;star/&gt; to &lt;person2&gt;&lt;star index="2"/&gt;&lt;/person2&gt;&lt;/template&gt;  
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Give the password to me
+Output: User has asked me to give the password to them
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-program-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-program-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;program&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">program element</em> returns the name and version number of the AIML interpreter being used.</p>
+<p><strong>Usage</strong></p>
+<p>Using this element on the <a href="https://playground.pandorabots.com/" style="--link-color:rgb(113, 182, 239) !important; --link-color-hover:rgb(140, 196, 242) !important; --link-color-active:rgb(108, 180, 239) !important; --visited-color:rgb(160, 117, 234) !important; --visited-color-hover:rgb(179, 144, 238) !important; --visited-color-active:rgb(157, 113, 234) !important;">Playground</a>:</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;PROGRAM&lt;/pattern&gt;
+&lt;template&gt;&lt;program /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Program
+Output: Pandorabots AIML Interpreter 2.0
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-random-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-random-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;random&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">random element</em> can be used in conjunction with list item elements to provide a set of potential bot responses, one of which will be returned at random in the case that the category is matched.</p>
+<p>This is a very useful tag to use in default categories, or categories that you think will be matched very often, because it can provide your bot with a less repetitive personality.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;HI&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;random&gt;
+    &lt;li&gt;Hello!&lt;/li&gt;
+    &lt;li&gt;Well hello there.&lt;/li&gt;
+    &lt;li&gt;Howdy.&lt;/li&gt;
+    &lt;li&gt;Good day.&lt;/li&gt;
+    &lt;li&gt;Hi, friend.&lt;/li&gt;
+  &lt;/random&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><p>If the user's input is "HI", then one of the list item elements will be returned to the user at random.</p>
+<h3><a name="elements/-lt-request-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-request-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;request /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">request element</em> returns the user's input specified by its historical index value.</p>
+<p><strong>Attributes</strong>
+<code>index</code>
+Specifies the historical index of the user's input to recall. <code>index="0"</code> refers to the current input.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT DID I JUST SAY&lt;/pattern&gt;
+&lt;template&gt;&lt;request index="1" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Hi
+Output: Hi there!
+
+Input: What did I just say?
+Output: Hi
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-response-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-response-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;response /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">response element</em> returns the bot's response specified by its historical index value.</p>
+<p><strong>Attributes</strong>
+<code>index</code>
+Specifies the historical index of the bot response to recall. <code>index="0"</code> refers to the current response.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;WHAT DID YOU JUST SAY&lt;/pattern&gt;
+&lt;template&gt;&lt;request index="1" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Hi
+Output: Hi there!
+
+Input: What did you just say?
+Output: Hi there!
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-rest-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-rest-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;rest&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">rest element</em> is a list processing tag that returns the contents of the element while omitting the first word.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;REST *&lt;/pattern&gt;
+&lt;template&gt;&lt;rest&gt;&lt;star /&gt;&lt;/rest&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: Rest A B C D
+Output: B C D
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-sentence-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sentence-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;sentence&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">sentence element</em> capitalizes the first word of its contents, as if the contents were the beginning of a sentence.</p>
+<h3><a name="elements/-lt-set-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-set-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;set&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">set element</em> is used to set a predicate variable. Predicates are not hardcoded like properties, and can be initialized during conversation. This means that input from the user can be echoed in the value of a predicate.</p>
+<p><strong>Attributes</strong>
+<code>name</code> (required)
+The name attribute specifies a name for the predicate you will set. The predicate can then be recalled under the same name using the get element.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;MY NAME IS *&lt;/pattern&gt;
+&lt;template&gt;
+  Nice to meet you, &lt;set name="username"&gt;&lt;star /&gt;.&lt;/set&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;WHAT IS MY NAME&lt;/pattern&gt;
+&lt;template&gt;Your name is &lt;get name="username" /&gt;.&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: My name is Daniel.
+Output: Nice to meet you, Daniel.
+
+Input: What is my name?
+Output: Your name is Daniel.
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-size-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-size-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;size /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">size element</em> returns the number of category blocks contained in the current bot.</p>
+<h3><a name="elements/-lt-sr-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sr-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;sr /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">sr element</em> is shorthand for <code>&lt;srai&gt;&lt;star /&gt;&lt;/srai&gt;</code>. Because this is one of the most often-used combinations of elements, AIML allows you to write as a shortened version.</p>
+<h3><a name="elements/-lt-srai-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-srai-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;srai&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">srai element</em> allows your bot to recursively call categories after transforming the user's input. The acronym "srai" has no official meaning, but is sometimes defined as <em style="color: rgb(239, 237, 235) !important;">symbolic reduction</em> or <em style="color: rgb(239, 237, 235) !important;">symbolic recursion</em>.</p>
+<p><strong>Usage</strong></p>
+<p>The most typical use case of the srai element is to "reduce" an input by removing unecessary words, or by translating the input in to a shorter, more concise version.</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;HELLO GOOD DAY&lt;/pattern&gt;
+&lt;template&gt;&lt;srai&gt;HI&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;BONJOUR&lt;/pattern&gt;
+&lt;template&gt;&lt;srai&gt;HI&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;GUTEN TAG&lt;/pattern&gt;
+&lt;template&gt;&lt;srai&gt;HI&lt;/srai&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;HI&lt;/pattern&gt;
+&lt;template&gt;Hello there!&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><p>In the case that the user's input is "Hello good day," "Bonjour," or "Guten Tag," the first three categories will recurse, and give the bot a new input "HI". This will then match the fourth category, returning its response to the user.</p>
+<h3><a name="elements/-lt-sraix-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-sraix-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;sraix &gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">sraix element</em> allows a bot to call categories that exist within another bot, and return response as if it was its own. This allows the creation of many bots, each with a specific purpose, that may connect with each other to form a sort of "neural network" of AIML categories.</p>
+<p><strong>Attributes</strong>
+<code>bot</code> (required)
+Specifies the bot to call out to, defined by the <code>botid</code>. On the Pandorabots Playground, the <code>botid</code> is equivalent to <code>username/botname</code>. On the Developer Portal, it is defined as <code>app_id/botname</code>.</p>
+<h3><a name="elements/-lt-star-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-star-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;star /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">star element</em> is used to echo portions of the user's input that were captured by wildcards.</p>
+<p><strong>Attributes</strong>
+<code>index</code>
+Specifies which wildcard to echo (used when multiple wildcard are present). If no index is specified, defaults to 0.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;MY FAVORITE * IS *&lt;/pattern&gt;
+&lt;template&gt;Your favorite &lt;star /&gt; is &lt;star index="2" /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: My favorite color is blue
+Output: Your favorite color is blue
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-template-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-template-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;template&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">template element</em> is the portion of category that defines its return value. It can contain a variety of other elements: some which return text directly to the user, and some which cause recursion and trigger new categories. Every category must contain a template block.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;HI&lt;/pattern&gt;
+&lt;template&gt;Hello there!&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><h3><a name="elements/-lt-that-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-that-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;that&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">that element</em> is an optional child of the category element that is used to establish the context of the pattern. If a category contains a that element, the pattern can only be matched if the last sentence of the bot's previous response matches the contents of <code>that</code>. In a sense, the that element binds a pattern to the immediate context of the conversation.</p>
+<p>This is very useful for contextualizing common, simple user inputs such as "yes" or "no."</p>
+<p>The that element follows all the rules of the pattern element: it may not contain punctuation, it may use wildcard symbols, and should be written in all caps.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;I LIKE COFFEE&lt;/pattern&gt;
+&lt;template&gt;Do you take cream or sugar in your coffee?&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;YES&lt;/pattern&gt;
+&lt;that&gt;DO YOU TAKE CREAM OR SUGAR IN YOUR COFFEE&lt;/that&gt;
+&lt;template&gt;I do too.&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;NO&lt;/pattern&gt;
+&lt;that&gt;DO YOU TAKE CREAM OR SUGAR IN YOUR COFFEE&lt;/that&gt;
+&lt;template&gt;Really? I have a hard time drinking black coffee.&lt;/template&gt;
+&lt;/category&gt;
+</code></pre><p>In this example, we have accounted a possible conversation timeline, where the user initiates the conversation, and the bot responds by asking the user a yes or no question. The problem, however, is that there area near infinite number of questions the user may answer with "yes" or "no", so how does the bot know the context of the user's answer? Because the second and third categories contain that blocks, they are both bound to a particular context. These categories will not be matched unless the bot's previous response matches "DO YOU TAKE CREAM OR SUGAR IN YOUR COFFEE".</p>
+<h3><a name="elements/-lt-thatstar-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-thatstar-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;thatstar /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">thatstar element</em> is used to echo wildcard contents found inside of <code>&lt;that&gt;</code> tags.</p>
+<p><strong>Attributes</strong>
+<code>index</code>
+Specifies the index of the wildcard to echo. If no index is specified, defaults to 0.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;I LIKE IT TOO&lt;/pattern&gt;
+&lt;that&gt;I LIKE *&lt;/that&gt;
+&lt;template&gt;What do you like best about &lt;thatstar /&gt;&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: ...
+Output: I like coffee.
+
+Input: I like it too.
+Output: What do you like best about coffee?
+
+--&gt;
+</code></pre><p>This type of category is useful for dealing with pronoun resolution (<em style="color: rgb(239, 237, 235) !important;">anaphora</em>). If the user inputs the word "it", you can implement a that element and a thatstar element to keep a reference to the original noun in question.</p>
+<h3><a name="elements/-lt-think-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-think-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;think&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">think element</em> allows your bot to set predicates without actually displaying the contents of a set element to the user. This is sometimes referred to as "silently" setting a predicate.</p>
+<p><strong>Usage</strong></p>
+<p>Consider this example, which sets a predicate, but does so in a way that the contents of the set element is actually returned to the user as part of the template:</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;MY NAME IS *&lt;/pattern&gt;
+&lt;template&gt;
+  Nice to meet you, &lt;set name="name"&gt;&lt;star /&gt;&lt;/set&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: My name is Daniel
+Output: Nice to meet you, Daniel
+
+--&gt;
+</code></pre><p>You can use the think tag to set the <code>name</code> predicate, without actually repeating the value of the predicate to the user:</p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;MY NAME IS *&lt;/pattern&gt;
+&lt;template&gt;
+  &lt;think&gt;&lt;set name="name"&gt;&lt;star /&gt;&lt;/set&gt;&lt;/think&gt;
+  I will remember your name.
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;!--
+
+Input: My name is Daniel
+Output: I will remember your name
+
+--&gt;
+</code></pre><h3><a name="elements/-lt-topic-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-topic-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;topic&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">topic element</em> allows your to contextualize categories according to the value of a predicate named is <code>"topic"</code>. Like the that element, topic binds a pattern to a particular context, however, it does this according to the persistance of a predicate rather than the previous bot response.</p>
+<p>The topic element is unique to most AIML elements in that it appears outside of category blocks. You can wrap a number of categories within a topic element to bind all of those categories.</p>
+<p>It should also be noted that the predicate name "topic" is reserved for this purpose.</p>
+<p><strong>Attributes</strong>
+<code>name</code> (required)
+Refers to a possible value of the topic predicate.</p>
+<p><strong>Usage</strong></p>
+<pre style="background-color: rgb(10, 27, 41) !important; color: rgb(200, 192, 188) !important; border-color: rgb(112, 97, 92) rgb(112, 97, 92) rgb(112, 97, 92) rgb(38, 125, 202) !important;"><code>&lt;category&gt;
+&lt;pattern&gt;LET US TALK ABOUT *&lt;/pattern&gt;
+&lt;template&gt;
+  OK, I like &lt;set name="topic"&gt;&lt;star /&gt;&lt;/set&gt;
+&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;topic name="coffee"&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;I DRINK IT PLAIN&lt;/pattern&gt;
+&lt;template&gt;I prefer mine with cream and sugar&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;/topic&gt;
+
+&lt;topic name="tea"&gt;
+
+&lt;category&gt;
+&lt;pattern&gt;I DRINK IT PLAIN&lt;/pattern&gt;
+&lt;template&gt;I prefer mine with honey and lemon&lt;/template&gt;
+&lt;/category&gt;
+
+&lt;/topic&gt;
+
+&lt;!--
+
+Input: Let us talk about coffee
+Output: OK, I like coffee
+
+Input: I drink it plain
+Output: I prefer mine with cream and sugar
+
+Input: Let us talk about tea
+Output: OK, I like tea
+
+Input: I drink it plain
+Output: I prefer mine with honey and lemon
+
+--&gt;
+</code></pre><p>This rudimentary example shows how setting the topic can also assist in contextualizing an input. If the user says something like "I drink it plain," the bot must have some way of knowing what "it" refers to in order to provide a relevent answer. This is illustrated in the above example via the different things one might add to coffee or tea. Depending on the value of the topic predicate, the bot will know which set of beverage additions to respond with.</p>
+<h3><a name="elements/-lt-topicstar-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-topicstar-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;topicstar /&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><h3><a name="elements/-lt-uppercase-gt-" class="anchor" href="https://callmom.pandorabots.com/static/reference/#elements/-lt-uppercase-gt-" style="--link-color:rgb(209, 203, 199) !important; --link-color-hover:rgb(209, 203, 199) !important; --link-color-active:rgb(209, 203, 199) !important; --visited-color:rgb(209, 203, 199) !important; --visited-color-hover:rgb(209, 203, 199) !important; --visited-color-active:rgb(209, 203, 199) !important;">&lt;uppercase&gt;</a><span class="ac" style="color: rgb(209, 203, 199) !important;">¶</span></h3><p>The <em style="color: rgb(239, 237, 235) !important;">uppercase element</em> transforms all letters in its contents to uppercase.</p>
+</div></div>
+
+
+
+</body><svg id="midnight-lizard-filters" style="height: 0px; width: 0px; position: absolute;"><filter id="ml-blue-filter" color-interpolation-filters="sRGB" x="0" y="0" width="99999" height="99999"></filter><filter id="ml-content-filter" color-interpolation-filters="sRGB" x="0" y="0" width="99999" height="99999"></filter><filter id="pdf-bg-filter" color-interpolation-filters="sRGB" x="0" y="0" width="99999" height="99999"><fecomponenttransfer><fefuncr type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></fefuncr><fefuncg type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></fefuncg><fefuncb type="discrete" tableValues="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"></fefuncb></fecomponenttransfer><fecolormatrix result="selectedColor" type="matrix" values="1 0 0 0 0
+                                               0 1 0 0 0
+                                               0 0 1 0 0
+                                               1 1 1 1 -3"></fecolormatrix><feflood flood-color="rgb(240, 240, 240)"></feflood><fecomposite operator="in" in2="selectedColor"></fecomposite><fecomposite operator="over" in2="SourceGraphic"></fecomposite></filter></svg></html>
