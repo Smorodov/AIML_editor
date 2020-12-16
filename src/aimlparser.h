@@ -53,7 +53,6 @@ public:
     bool saveVars(const QString&);
     QString executeCommand(const QString& commandStr);
     QString getResponse(QString, const bool & = false);
-    void runRegression();
     QString logString;
     QTextStream* logStream;
 

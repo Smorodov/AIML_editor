@@ -30,7 +30,7 @@
             запусти *
         </pattern>
         <template>
-            <system> python <star/>.py </system>
+            <system> python <star/> </system>
         </template>
     </category>
     <category>
